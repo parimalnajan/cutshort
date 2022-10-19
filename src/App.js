@@ -5,7 +5,6 @@ import OnboardingPage from './pages/onboarding';
 function App() {
   return (
     <Layout> 
-    <div>main</div>
     <OnboardingPage/>
     </Layout>
   );
