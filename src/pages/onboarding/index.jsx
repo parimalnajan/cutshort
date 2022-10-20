@@ -11,12 +11,7 @@ import StepFour from './StepFour.jsx'
 export const StepContext= createContext("Default")
 const OnboardingPage = () => {
 
-  useEffect(() => {
-    console.log(currentStep)   
-  }, [])
-  
   const steps = [1,2,3,4]
-
   const [currentStep,setCurrentStep] = useState(1);
 
   const handleNextStep = () => {
@@ -31,23 +26,14 @@ const OnboardingPage = () => {
     setCurrentStep(oldState=> oldState-1)
   }
   return (
-    <StepContext.Provider value={{currentStep,handleNextStep}}>
-
+  <StepContext.Provider value={{steps,currentStep,handleNextStep}}>
     <div className="flex flex-col items-center">
       <button onClick={goToPrevStep}>Back</button>
-      <h1 className=" mt-16 mb-10 -ml-5 text-3xl custom-black font-bold flex flex-row justify-center items-center">
+      <h1 className=" mt-16 mb-12 -ml-5 text-3xl custom-black font-bold flex flex-row justify-center items-center">
         <img className="w-14" src={brandLogo}></img>Eden
       </h1>
       <br />
-      <div className="text-center mb-20 flex">
-        {steps.map((x) => (
-          <ProgressIndicator
-            currentStep={currentStep}
-            iterator={x}
-            lastStep={steps[steps.length - 1]}
-          />
-        ))}
-      </div>
+      <ProgressIndicator/>
       <div className="flex flex-col items-center">
       { currentStep===1? <StepOne />
         :currentStep===2?<StepTwo />
@@ -56,9 +42,8 @@ const OnboardingPage = () => {
         :null
       }
       </div>
-
     </div>
-      </StepContext.Provider>
+  </StepContext.Provider>
   );
 }
 

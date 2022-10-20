@@ -4,7 +4,7 @@ import InputText from '../../components/InputText';
 import {StepContext} from '../onboarding'
 
 const StepTwo = () => {
-  const {value, handleNextStep} = useContext(StepContext)
+  const {handleNextStep} = useContext(StepContext)
 
   return (
     <div className='flex flex-col items-center'>

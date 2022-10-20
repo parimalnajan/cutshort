@@ -3,7 +3,7 @@ import ButtonCreateWorkspace from '../../components/ButtonCreateWorkspace';
 import {StepContext} from '../onboarding'
 
 const StepThree = () => {
-  const {value, handleNextStep} = useContext(StepContext)
+  const {handleNextStep} = useContext(StepContext)
 
     const CardsData=[
         {

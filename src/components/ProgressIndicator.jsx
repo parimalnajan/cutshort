@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { StepContext } from '../pages/onboarding'; 
 
-const ProgressIndicator = ({ currentStep, iterator ,lastStep }) => {
+
+const ProgressCircle = ({ currentStep, iterator ,lastStep }) => {
   return (
     <div className="flex flex-row items-center text-gray-500 ">
       <div className={`${iterator<=currentStep?"bg-brand text-gray-300":""} border-gray-200 border-2 rounded-full w-10 h-10 flex flex-row items-center justify-center`}>
@@ -18,5 +20,23 @@ const ProgressIndicator = ({ currentStep, iterator ,lastStep }) => {
     </div>
   );
 };
+
+ const ProgressIndicator = () => {
+  const {steps,currentStep} = useContext(StepContext)
+
+  return (
+    <div className="text-center mb-20 flex">     
+      {steps.map((x) => (
+          <ProgressCircle
+            currentStep={currentStep}
+            iterator={x}
+            lastStep={steps[steps.length - 1]}
+          />
+        ))}
+      </div>
+
+  )
+}
+
 
 export default ProgressIndicator

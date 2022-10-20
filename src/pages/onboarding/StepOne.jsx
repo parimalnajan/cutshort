@@ -4,7 +4,7 @@ import InputText from '../../components/InputText';
 import {StepContext} from '../onboarding'
 
 const StepOne = () => {
-  const {value, handleNextStep} = useContext(StepContext)
+  const {handleNextStep} = useContext(StepContext)
   return (
     <div>
       <h2 className="text-2xl custom-black font-bold text-center mb-3 sm:text-3xl">
