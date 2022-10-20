@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import Button  from '../../components/ButtonCreateWorkspace.jsx'
 import StepOne from './StepOne.jsx'
 import StepThree from './StepThree.jsx'
@@ -8,6 +8,7 @@ import ProgressIndicator from '../../components/ProgressIndicator.jsx'
 import StepFour from './StepFour.jsx'
 
 
+export const StepContext= createContext("Default")
 const OnboardingPage = () => {
 
   useEffect(() => {
@@ -19,7 +20,6 @@ const OnboardingPage = () => {
   const [currentStep,setCurrentStep] = useState(1);
 
   const handleNextStep = () => {
-    console.log('hi')
     if(currentStep===steps[steps.length-1 ])
     {alert("Hire Me"); return}
     setCurrentStep(oldState=> oldState+1)
@@ -30,8 +30,9 @@ const OnboardingPage = () => {
     {alert("Hire Me"); return}
     setCurrentStep(oldState=> oldState-1)
   }
-  
   return (
+    <StepContext.Provider value={{currentStep,handleNextStep}}>
+
     <div className="flex flex-col items-center">
       <button onClick={goToPrevStep}>Back</button>
       <h1 className=" mt-16 mb-10 -ml-5 text-3xl custom-black font-bold flex flex-row justify-center items-center">
@@ -48,15 +49,16 @@ const OnboardingPage = () => {
         ))}
       </div>
       <div className="flex flex-col items-center">
-      { currentStep===1? <StepOne handleNextStep={handleNextStep}/>
-        :currentStep===2?<StepTwo handleNextStep={handleNextStep}/>
-        :currentStep===3?<StepThree handleNextStep={handleNextStep}/>
-        :currentStep===4?<StepFour handleNextStep={handleNextStep}/>
+      { currentStep===1? <StepOne />
+        :currentStep===2?<StepTwo />
+        :currentStep===3?<StepThree />
+        :currentStep===4?<StepFour/>
         :null
       }
       </div>
 
     </div>
+      </StepContext.Provider>
   );
 }
 

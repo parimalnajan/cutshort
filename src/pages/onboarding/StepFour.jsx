@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {StepContext} from '../onboarding'
+
 
 const StepFour = () => {
+  const {value, handleNextStep} = useContext(StepContext)
+
   return (
     <div className='flex flex-col items-center'>
         <span style={{fontSize:"62px"}} className="material-symbols-outlined text-brand active mb-8">
@@ -12,6 +16,7 @@ const StepFour = () => {
 
     <button 
       className={`text-gray-300 text-sm font-semibold bg-brand w-96 rounded-md p-4 `}
+      onClick={handleNextStep}
     >
       Launch Eden
     </button>

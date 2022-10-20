@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ButtonCreateWorkspace from '../../components/ButtonCreateWorkspace';
+import {StepContext} from '../onboarding'
 
-const StepThree = ({handleNextStep}) => {
-    
+const StepThree = () => {
+  const {value, handleNextStep} = useContext(StepContext)
+
     const CardsData=[
         {
             title:"For myself",
