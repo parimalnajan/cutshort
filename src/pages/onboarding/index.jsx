@@ -11,14 +11,12 @@ import StepFour from './StepFour.jsx'
 const OnboardingPage = () => {
 
   useEffect(() => {
-    console.log(currentStep)
-  
-   
+    console.log(currentStep)   
   }, [])
   
   const steps = [1,2,3,4]
 
-  const [currentStep,setCurrentStep] = useState(3);
+  const [currentStep,setCurrentStep] = useState(1);
 
   const handleNextStep = () => {
     console.log('hi')
@@ -36,7 +34,7 @@ const OnboardingPage = () => {
   return (
     <div className="flex flex-col items-center">
       <button onClick={goToPrevStep}>Back</button>
-      <h1 className=" mt-16 mb-10 -ml-5 text-2xl text-gray-800 font-extrabold flex flex-row justify-center items-center">
+      <h1 className=" mt-16 mb-10 -ml-5 text-3xl custom-black font-bold flex flex-row justify-center items-center">
         <img className="w-14" src={brandLogo}></img>Eden
       </h1>
       <br />
@@ -58,9 +56,6 @@ const OnboardingPage = () => {
       }
       </div>
 
-      {/* <Button/>
-    <TextInput/>
-    <StepThree/> */}
     </div>
   );
 }

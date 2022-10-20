@@ -17,10 +17,10 @@ const StepThree = ({handleNextStep}) => {
     ]
   return (
     <div className='flex flex-col items-center'>
-      <h2 className="text-2xl text-gray-800 font-bold text-center mb-3 sm:text-3xl">
+      <h2 className="text-2xl custom-black font-bold text-center mb-3 sm:text-3xl">
         How are you planning to use Eden?
       </h2>
-      <h3 className="text-gray-400 font-semibold text-center mb-12">
+      <h3 className="custom-gray font-medium text-center mb-12">
         We'll streamline your setup experience accordingly.
       </h3>
       <div className="flex flex-row mb-6">

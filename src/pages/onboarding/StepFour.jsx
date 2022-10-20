@@ -7,8 +7,8 @@ const StepFour = () => {
         check_circle
         </span>
 
-    <h2 className='text-3xl font-bold text-gray-700 mb-4'>Congratulations, Eren Yaeger!</h2>
-    <h3 className='text-sm font-semibold text-gray-400 mb-6'>You have completed onboarding, you can start using the Founding Titan!</h3>
+    <h2 className='text-3xl font-bold custom-black mb-4'>Congratulations, Eren Yaeger!</h2>
+    <h3 className='text-sm font-medium custom-gray mb-6'>You have completed onboarding, you can start using the Founding Titan!</h3>
 
     <button 
       className={`text-gray-300 text-sm font-semibold bg-brand w-96 rounded-md p-4 `}
