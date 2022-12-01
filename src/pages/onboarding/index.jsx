@@ -16,13 +16,13 @@ const OnboardingPage = () => {
 
   const handleNextStep = () => {
     if(currentStep===steps[steps.length-1 ])
-    {alert("Hire Me"); return}
+    {alert("/end"); return}
     setCurrentStep(oldState=> oldState+1)
   }
 
   const goToPrevStep=()=>{
     if(currentStep===steps[0])
-    {alert("Hire Me"); return}
+    {alert("/end"); return}
     setCurrentStep(oldState=> oldState-1)
   }
   return (
